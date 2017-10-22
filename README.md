@@ -4,7 +4,7 @@ An experiment in learning more about REST API design
 
 The services are : 
 
-1.) User Service
+1.) User Service (With illustration of bean validation)
 
 Example:
 

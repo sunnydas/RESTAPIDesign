@@ -5,6 +5,8 @@ import com.innov.training.rest.users.store.SimpleUserStore;
 import com.innov.training.rest.users.store.exception.SimpleUserStoreException;
 import org.apache.log4j.Logger;
 
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 import javax.ws.rs.*;
 import javax.ws.rs.core.GenericEntity;
 import javax.ws.rs.core.MediaType;
@@ -58,7 +60,7 @@ public class TrainingUserService {
   @GET
   @Path("/{userId}")
   @Produces(MediaType.APPLICATION_JSON)
-  public Response getUser(@PathParam("userId") String userId){
+  public Response getUser(@PathParam("userId") @NotNull @Min(value = 1 , message = "userId needs to be a positive integer greater than zero") String userId){
     Response response = null;
     if(userId != null){
       SimpleUserBean simpleUserBean = SimpleUserStore.getUser(userId);
@@ -82,7 +84,7 @@ public class TrainingUserService {
   @DELETE
   @Path("/{userId}")
   @Produces(MediaType.APPLICATION_JSON)
-  public Response deleteUser(@PathParam("userId") String userId){
+  public Response deleteUser(@PathParam("userId") @NotNull @Min(value = 1 , message = "userId needs to be a positive integer greater than zero") String userId){
     Response response = null;
     try{
       SimpleUserStore.deleteUser(userId);
@@ -99,11 +101,11 @@ public class TrainingUserService {
   @PUT
   @Path("/{userId}")
   @Produces(MediaType.APPLICATION_JSON)
-  public Response updateUser(SimpleUserBean simpleUserBean){
+  public Response updateUser(@PathParam("userId") @NotNull @Min(value = 1 , message = "userId needs to be a positive integer greater than zero") String userId,SimpleUserBean simpleUserBean){
     Response response = null;
     if(simpleUserBean != null){
       try {
-       simpleUserBean =  SimpleUserStore.updateUser(simpleUserBean.getUserId(),simpleUserBean);
+       simpleUserBean =  SimpleUserStore.updateUser(userId,simpleUserBean);
        response =  Response.status(Response.Status.OK).entity(simpleUserBean).build();
       } catch (SimpleUserStoreException e) {
         String err = "{\"errors\": [\"" + e.getMessage() + "\"]}";
