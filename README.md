@@ -63,3 +63,5 @@ Postman-Token: df73737c-505c-58c2-f365-9b3fa60f52f5
 	"rank" : 1
 }
 
+*subresources are tricky
+
