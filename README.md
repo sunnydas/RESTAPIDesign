@@ -97,5 +97,12 @@ Host: localhost:8080
 Cache-Control: no-cache
 Postman-Token: 304f6eaf-6b2d-4521-af67-a582122028b7
 
+5.) Conditional request processing using if not modified since
+
+GET /InnovRestTraining/api/rest/daytemperature HTTP/1.1
+Host: localhost:8080
+If-Modified-Since: Monday, 23 Oct 2017 18:45:19 GMT
+Cache-Control: no-cache
+Postman-Token: a8a420dd-45cc-cbae-ca79-3605fdbda2d3
 
 
