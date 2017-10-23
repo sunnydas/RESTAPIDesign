@@ -91,3 +91,11 @@ Host: localhost:8080
 Cache-Control: no-cache
 Postman-Token: c3432b4e-91af-a2e2-f3c6-6f85614b78c2
 
+4.)Cache Control Service
+GET /InnovRestTraining/api/rest/metadata HTTP/1.1
+Host: localhost:8080
+Cache-Control: no-cache
+Postman-Token: 304f6eaf-6b2d-4521-af67-a582122028b7
+
+
+
