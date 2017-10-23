@@ -82,4 +82,3 @@ Postman-Token: c47c520f-193a-406f-e0d1-9af3b0338eed
     "location": "Boulder,CO",
     "rank": 1
 }
-
