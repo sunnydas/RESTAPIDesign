@@ -34,7 +34,17 @@ public class AtheletesResource {
   @Consumes(MediaType.APPLICATION_JSON)
   public AtheleteBean addAthelete(@PathParam("activityId") String activityId,AtheleteBean atheleteBean)
       throws AtheleteDataStoreException {
-    return AtheleteDataStore.addAthelete(activityId,atheleteBean);
+    return AtheleteDataStore.addAthelete(activityId, atheleteBean);
   }
+
+
+  @PUT
+  @Produces(MediaType.APPLICATION_JSON)
+  @Consumes(MediaType.APPLICATION_JSON)
+  public AtheleteBean updateAthelete(@PathParam("activityId") String activityId,@PathParam("atheleteId") String atheleteId,AtheleteBean atheleteBean)
+      throws AtheleteDataStoreException {
+    return AtheleteDataStore.updateAtheleteDetails(activityId,atheleteId,atheleteBean);
+  }
+
 
 }

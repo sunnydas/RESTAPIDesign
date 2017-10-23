@@ -76,4 +76,13 @@ public class TrainingEnduranceSportsService {
     return atheletesResource;
   }
 
+  @Path("/{activityId}/athelete/{atheleteId}")
+  public AtheletesResource updateAthelete(@PathParam("activityId") @NotNull String activityId,@PathParam("atheleteId") @NotNull String atheleteId) throws AtheleteDataStoreException{
+    AtheletesResource atheletesResource = null;
+    if(activityId != null){
+      atheletesResource = new AtheletesResource();
+    }
+    return atheletesResource;
+  }
+
 }
