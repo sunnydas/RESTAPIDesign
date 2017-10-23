@@ -65,3 +65,21 @@ Postman-Token: df73737c-505c-58c2-f365-9b3fa60f52f5
 
 *subresources are tricky
 
+PUT /InnovRestTraining/api/rest/endurancesports/1/athelete/1 HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+Cache-Control: no-cache
+Postman-Token: c47c520f-193a-406f-e0d1-9af3b0338eed
+
+{
+    "activityId": "1",
+    "age": 35,
+    "atheleteId": "2",
+    "club": "Solo",
+    "fName": "Scott",
+    "gender": "MALE",
+    "lName": "fisher",
+    "location": "Boulder,CO",
+    "rank": 1
+}
+
