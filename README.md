@@ -105,4 +105,12 @@ If-Modified-Since: Monday, 23 Oct 2017 18:45:19 GMT
 Cache-Control: no-cache
 Postman-Token: a8a420dd-45cc-cbae-ca79-3605fdbda2d3
 
+6.) Conditional request processing using eTags (If-None-Match)
+
+GET /InnovRestTraining/api/rest/daytemperature/tagged HTTP/1.1
+Host: localhost:8080
+If-None-Match: "1192850254"
+Cache-Control: no-cache
+Postman-Token: 3e8fcc6f-199d-a128-09a2-067b98101aba
+
 

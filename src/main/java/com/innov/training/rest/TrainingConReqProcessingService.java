@@ -6,10 +6,7 @@ import com.innov.training.rest.dynamic.resource.DayTemperatureLookUpresource;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
-import javax.ws.rs.core.Context;
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Request;
-import javax.ws.rs.core.Response;
+import javax.ws.rs.core.*;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
@@ -32,6 +29,26 @@ public class TrainingConReqProcessingService {
     if(builder == null){
       builder = Response.ok(dayTemperature);
       builder.lastModified(modifiedDate);
+    }
+    response = builder.build();
+    return response;
+  }
+
+
+
+  @GET
+  @Path("tagged")
+  @Produces(MediaType.APPLICATION_JSON)
+  public Response getCurrentTemperatureTagged(@Context Request request){
+    Response response = null;
+    DayTemperature dayTemperature = DayTemperatureLookUpresource.getCurrentTemperature();
+    EntityTag entityTag = new EntityTag(Integer.toString(dayTemperature.hashCode()));
+    //evaluate etag
+    Response.ResponseBuilder builder =
+        request.evaluatePreconditions(entityTag);
+    if(builder == null){
+      builder = Response.ok(dayTemperature);
+      builder.tag(entityTag);
     }
     response = builder.build();
     return response;
