@@ -82,3 +82,12 @@ Postman-Token: c47c520f-193a-406f-e0d1-9af3b0338eed
     "location": "Boulder,CO",
     "rank": 1
 }
+
+
+3.) Long running task simulation
+
+GET /InnovRestTraining/api/rest/heavylifting/fetch HTTP/1.1
+Host: localhost:8080
+Cache-Control: no-cache
+Postman-Token: c3432b4e-91af-a2e2-f3c6-6f85614b78c2
+
