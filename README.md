@@ -122,3 +122,11 @@ Cache-Control: no-cache
 Postman-Token: 36c2e209-5cab-2609-870b-b6a580a97ea2
 
 
+8.) Simple illustration of HATEOAS with pagination
+
+GET /InnovRestTraining/api/rest/userinfo/hateoas?offset=10&amp;limit=10 HTTP/1.1
+Host: localhost:8080
+Cache-Control: no-cache
+Postman-Token: a8cbdd2f-2900-c83d-c543-0d7a264db220
+
+

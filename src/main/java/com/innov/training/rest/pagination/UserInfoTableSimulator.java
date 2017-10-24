@@ -1,5 +1,7 @@
 package com.innov.training.rest.pagination;
 
+import com.innov.training.rest.pagination.hateoas.UserInfoDataHateoasHelper;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -33,6 +35,32 @@ public class UserInfoTableSimulator {
       userInfoRows.add(userInfoTableSimulator.userInfoTable.getRows().get(i));
     }
     return userInfoRows;
+  }
+
+
+
+  public static UserInfoDataHateoasHelper getUserInfoHateoas(int offset,int limit){
+    UserInfoDataHateoasHelper userInfoDataHateoasHelper = new UserInfoDataHateoasHelper();
+    if(!warmedup){
+      userInfoTableSimulator.warmup();
+      warmedup = true;
+    }
+    List<UserInfoBean> userInfoRows = new ArrayList<>();
+    int size = Math.min(offset+limit,userInfoTableSimulator.userInfoTable.getRows().size() - 1);
+    for(int i = offset ; i <= size ; i++){
+      userInfoRows.add(userInfoTableSimulator.userInfoTable.getRows().get(i));
+    }
+    userInfoDataHateoasHelper.setUserInfoBeans(userInfoRows);
+    userInfoDataHateoasHelper.setSelf("?offset=" + offset + "&limit=" + limit);
+    int prevOffset = Math.max(0,(offset - limit));
+    int prevSize = Math.min((prevOffset + limit),offset);
+    userInfoDataHateoasHelper.setPrev("?offset=" + prevOffset + "&limit=" + limit);
+    int nextLimit = Math.min((size + limit),(userInfoTableSimulator.userInfoTable.getRows().size() - 1));
+    int nextOffset = size;
+    userInfoDataHateoasHelper.setNext("?offset="+nextOffset+"&limit="+limit);
+    userInfoDataHateoasHelper.setTotalSize(userInfoTableSimulator.userInfoTable.getRows().size());
+    userInfoDataHateoasHelper.setRowCount(userInfoRows.size());
+    return userInfoDataHateoasHelper;
   }
 
 
