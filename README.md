@@ -114,3 +114,11 @@ Cache-Control: no-cache
 Postman-Token: 3e8fcc6f-199d-a128-09a2-067b98101aba
 
 
+7.) A simple illustration of pagination:
+
+GET /InnovRestTraining/api/rest/userinfo?offset=900&amp;limit=100 HTTP/1.1
+Host: localhost:8080
+Cache-Control: no-cache
+Postman-Token: 36c2e209-5cab-2609-870b-b6a580a97ea2
+
+
