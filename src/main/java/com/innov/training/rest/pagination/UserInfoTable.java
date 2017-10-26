@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by sundas on 10/24/2017.
+ * Created by user on 10/24/2017.
  */
 public class UserInfoTable {
 

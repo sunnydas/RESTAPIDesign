@@ -8,7 +8,7 @@ import javax.ws.rs.core.MediaType;
 import java.util.List;
 
 /**
- * Created by sundas on 10/22/2017.
+ * Created by user on 10/22/2017.
  */
 public class AtheletesResource {
 

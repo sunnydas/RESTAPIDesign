@@ -1,7 +1,7 @@
 package com.innov.training.rest.users.store.exception;
 
 /**
- * Created by sundas on 10/22/2017.
+ * Created by user on 10/22/2017.
  */
 public class SimpleUserStoreException extends Exception {
 

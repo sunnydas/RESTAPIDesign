@@ -130,3 +130,51 @@ Cache-Control: no-cache
 Postman-Token: a8cbdd2f-2900-c83d-c543-0d7a264db220
 
 
+9.) Task tracker 
+
+GET /InnovRestTraining/api/rest/tasks HTTP/1.1
+Host: localhost:8080
+Cache-Control: no-cache
+Postman-Token: 8c4f5c0f-351c-d4cb-7763-f96eda8fa0ae
+
+
+POST /InnovRestTraining/api/rest/tasks HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+Cache-Control: no-cache
+Postman-Token: d16fbfcf-b346-aa5f-e0de-da43cbebeaaa
+
+{
+	"taskName" : "todoTask1",
+	"taskDescription": "Some things to do2"
+}
+
+GET /InnovRestTraining/api/rest/tasks/1 HTTP/1.1
+Host: localhost:8080
+Cache-Control: no-cache
+Postman-Token: ce54c28c-c6c9-ce19-db38-4be2fe1d6101
+
+
+PUT /InnovRestTraining/api/rest/tasks/1 HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+Cache-Control: no-cache
+Postman-Token: 44206bd5-c371-c778-26b9-f628db8ddedf
+
+{
+    "taskDescription": "Some things to do",
+    "taskId": "1",
+    "taskName": "todoTask2",
+    "taskStatus": "COMPLETED"
+}
+
+GET /InnovRestTraining/api/rest/tasks?offset=0&amp;limit=10&amp;taskstatus=COMPLETED HTTP/1.1
+Host: localhost:8080
+Cache-Control: no-cache
+Postman-Token: 8795f5a6-7257-6211-459c-18afdc76ed21
+
+DELETE /InnovRestTraining/api/rest/tasks/1 HTTP/1.1
+Host: localhost:8080
+Cache-Control: no-cache
+Postman-Token: b35b2d82-f984-8028-a6c4-05090221fac1
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW

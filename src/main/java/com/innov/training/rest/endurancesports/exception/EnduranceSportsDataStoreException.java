@@ -1,7 +1,7 @@
 package com.innov.training.rest.endurancesports.exception;
 
 /**
- * Created by sundas on 10/22/2017.
+ * Created by user on 10/22/2017.
  */
 public class EnduranceSportsDataStoreException extends Exception{
 
